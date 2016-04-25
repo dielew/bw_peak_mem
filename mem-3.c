@@ -73,7 +73,6 @@ int main( void )
 	gettimeofday(&start_time, NULL);
 	
 	for( i = 0; i < NUM_TRD && param->cpu_num < NUM_TRD; i++, param->cpu_num += 1 ){
-		printf("i = %d cpu= %d\n",i , param->cpu_num);
 		pthread_create(&tids[i], NULL, thread_rtin, (void *)param);
 	}
 	
